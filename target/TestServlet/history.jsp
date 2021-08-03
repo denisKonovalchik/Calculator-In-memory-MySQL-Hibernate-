@@ -1,23 +1,21 @@
-<%@ page import="by.tms.entity.Operation" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="by.konovalchik.entity.Operation" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Gudwin
   Date: 01.08.2021
   Time: 19:46
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page session="false" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Calculator</title>
 </head>
 <body>
-<h3><p>Operations history:</p></h3>
-<form action="/logsHistory" method="post"></form>
-<table>
+<h3>Operations history:</h3>
+<form action="/logsHistory" method="get"></form>
+<table border="1">
     <tr>
         <th>Num1</th>
         <th>Num2</th>
@@ -25,18 +23,18 @@
         <th>Result</th>
         <th>Login</th>
         <th>Password</th>
+
     </tr>
-
-    <c:forEach items="${requestScope.history}" var="operationList">
-        <tr>
-            <td>${operationList.num1}</td>
-            <td>${operationList.num2}</td>
-            <td>${operationList.result}</td>
-            <td>${operationList.user.getlogin()}</td>
-            <td>${operationList.user.getpassword()}</td>
-        </tr>
+    <c:forEach items="${history}" var="operation">
+    <tr>
+        <td>${operation.num1}</td>
+        <td>${operation.num2}</td>
+        <td>${operation.operation}</td>
+        <td>${operation.result}</td>
+        <td>${operation.user.getLogin()}</td>
+        <td>${operation.user.getPassword()}</td>
+    </tr>
     </c:forEach>
-
 </table>
 
 </body>

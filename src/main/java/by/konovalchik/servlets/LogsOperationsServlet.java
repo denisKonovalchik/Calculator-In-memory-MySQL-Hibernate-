@@ -22,10 +22,11 @@ public class LogsOperationsServlet extends HttpServlet {
         User user = (User) req.getSession().getAttribute("user");
         String login = user.getLogin();
         List<Operation> history = logs.showLogsByLogin(login);
-        resp.getWriter().println(history);
-        // req.setAttribute("history", history);
-        //  getServletContext().getRequestDispatcher("/history.jsp").forward(req, resp);
+        //resp.getWriter().println(history);
+        req.setAttribute("history", history);
+        getServletContext().getRequestDispatcher("/history.jsp").forward(req, resp);
 
     }
+
 
 }

@@ -6,23 +6,23 @@ import by.konovalchik.entity.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LogsOperationsDAOImp implements LogsOperationsDAO {
-    private static List<Operation> logsOperations = new ArrayList<>();
+public class LogOperationsDAOImp implements LogOperationsDAO {
+    private static List<Operation> logOperations = new ArrayList<>();
 
 
     @Override
     public void saveOperation(double num1, double num2, String operation, double result, User user) {
-        logsOperations.add(new Operation(num1,num2, operation, result, user));
+        logOperations.add(new Operation(num1,num2, operation, result, user));
     }
 
     @Override
     public List<Operation> showLogs() {
-        return logsOperations;
+        return logOperations;
     }
 
     public List<Operation> showLogsByLogin(String login){
         List<Operation> logsLogin = new ArrayList<>();
-        for(Operation operation: logsOperations){
+        for(Operation operation: logOperations){
             if(operation.getUser().getLogin().equals(login)){
                 logsLogin.add(operation);
             }

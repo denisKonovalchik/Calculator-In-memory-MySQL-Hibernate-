@@ -13,17 +13,16 @@
     <title>Calculator</title>
 </head>
 <body>
-<h3>Operations history:</h3>
-<form action="/logsHistory" method="get"></form>
+<h3>Operation history:</h3>
+<form action="/logHistory" method="post"></form>
 <table border="1">
     <tr>
-        <th>Num1</th>
+        <th >Num1</th>
         <th>Num2</th>
         <th>Operation</th>
         <th>Result</th>
         <th>Login</th>
         <th>Password</th>
-
     </tr>
     <c:forEach items="${history}" var="operation">
     <tr>
@@ -36,6 +35,9 @@
     </tr>
     </c:forEach>
 </table>
-
+<p> </p>
+<form action="/calculation" method="get">
+<button>Return</button>
+</form>
 </body>
 </html>

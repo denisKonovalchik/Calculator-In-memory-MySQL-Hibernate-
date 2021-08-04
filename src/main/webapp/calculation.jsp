@@ -14,12 +14,17 @@
 <form action="/calculation" method="post">
     <input type="number" step="any" name="num1"  placeholder="Number 1">
     <input type="number" step="any" name="num2" placeholder="Number 2">
-    <input type="text" name="operation" placeholder="Operation">
+    <select name="operation">
+         <option value="addition">Addition</option>
+         <option value="division">Division</option>
+         <option value="multiplication">Multiplication</option>
+         <option value="subtraction">Subtraction</option>
+    </select>
     <button>Calculation</button>
 </form>
 <p> Result: ${requestScope.result}</p>
 
-<form action="/logsHistory" method="get">
+<form action="/logHistory" method="post">
     <button>History</button>
 </form>
 <form action="/logout" method="get">

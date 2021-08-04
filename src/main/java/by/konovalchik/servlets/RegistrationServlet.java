@@ -19,7 +19,6 @@ public class RegistrationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         getServletContext().getRequestDispatcher("/registration.jsp").forward(req, resp);
-
     }
 
 
@@ -41,7 +40,5 @@ public class RegistrationServlet extends HttpServlet {
             req.setAttribute("messageRegistration", "The user is already registered" );
             getServletContext().getRequestDispatcher("/registration.jsp").forward(req, resp);
         }
-
-
     }
 }

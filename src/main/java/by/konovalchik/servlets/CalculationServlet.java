@@ -2,8 +2,8 @@ package by.konovalchik.servlets;
 
 import by.konovalchik.entity.User;
 import by.konovalchik.services.Calculation;
-import by.konovalchik.dao.LogsOperationsDAO;
-import by.konovalchik.dao.LogsOperationsDAOImp;
+import by.konovalchik.dao.LogOperationsDAO;
+import by.konovalchik.dao.LogOperationsDAOImp;
 import by.konovalchik.entity.Operation;
 
 import javax.servlet.ServletException;
@@ -21,12 +21,11 @@ public class CalculationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         getServletContext().getRequestDispatcher("/calculation.jsp").forward(req, resp);
-
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        LogsOperationsDAO logs = new LogsOperationsDAOImp();
+        LogOperationsDAO log = new LogOperationsDAOImp();
         User user =(User)req.getSession().getAttribute("user");
 
         double num1 = Double.parseDouble(req.getParameter("num1"));
@@ -36,9 +35,8 @@ public class CalculationServlet extends HttpServlet {
         Operation result = Calculation.getResult(num1,num2,operation);
         req.setAttribute("result", result.getResult());
 
-        logs.saveOperation(result.getNum1(),result.getNum2(),result.getOperation(),result.getResult(), user);
+        log.saveOperation(result.getNum1(),result.getNum2(),result.getOperation(),result.getResult(), user);
 
         getServletContext().getRequestDispatcher("/calculation.jsp").forward(req, resp);
-
     }
 }

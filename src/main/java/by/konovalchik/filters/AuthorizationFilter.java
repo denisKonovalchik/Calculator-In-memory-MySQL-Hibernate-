@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebFilter(servletNames = "CalculationServlet")
+@WebFilter(servletNames = {"CalculationServlet", "logOperationsServlet"} )
 public class AuthorizationFilter extends HttpFilter {
 
     @Override
@@ -18,10 +18,9 @@ public class AuthorizationFilter extends HttpFilter {
       User user = (User) req.getSession().getAttribute("user");
       if(user==null){
           req.setAttribute("messageError", "You are not authorized. Log in!");
-          getServletContext().getRequestDispatcher("/errorAuthorization.jsp").forward(req, res);
+          getServletContext().getRequestDispatcher("/authorizationError.jsp").forward(req, res);
       }else{
           chain.doFilter(req, res);
       }
-
     }
 }

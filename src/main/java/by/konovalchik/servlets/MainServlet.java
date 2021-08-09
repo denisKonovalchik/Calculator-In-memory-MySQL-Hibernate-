@@ -5,15 +5,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "LogoutUserServlet", urlPatterns = "/logout")
-public class LogoutUserServlet extends HttpServlet {
+@WebServlet(name = "MainServlet", urlPatterns = "/main")
+public class MainServlet  extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        session.invalidate();
-        resp.sendRedirect(req.getContextPath() + "/main");
+        getServletContext().getRequestDispatcher("/main.jsp").forward(req, resp);
     }
+
 }

@@ -18,11 +18,6 @@ public class LogOperationsServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/history.jsp").forward(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         LogOperationsDAO log = new LogOperationsDAOImp();
         User user = (User) req.getSession().getAttribute("user");
         String login = user.getLogin();
@@ -30,4 +25,5 @@ public class LogOperationsServlet extends HttpServlet {
         req.setAttribute("history", history);
         getServletContext().getRequestDispatcher("/history.jsp").forward(req, resp);
     }
+
 }

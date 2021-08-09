@@ -23,17 +23,16 @@ public class AuthorizationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UsersDAO daoUser = new UsersDAOImp();
-
         String login = req.getParameter("login");
         String password = req.getParameter("password");
-        User user = new User(login, password);
+        User userLog = new User(login,password);
 
-        if(daoUser.getUsers().contains(user)) {
+        if(daoUser.getUsers().contains(userLog)) {
+            User user = daoUser.getUserByLogin(login);
             req.getSession().setAttribute("user", user);
-            getServletContext().getRequestDispatcher("/calculation.jsp").forward(req, resp);
+            resp.sendRedirect(req.getContextPath() + "/calculation");
         }else{
-            req.setAttribute("message","The user is not registered. Authorization required");
-            getServletContext().getRequestDispatcher("/authorization.jsp").forward(req, resp);
+            resp.sendRedirect(req.getContextPath() + "/main");
         }
     }
 }

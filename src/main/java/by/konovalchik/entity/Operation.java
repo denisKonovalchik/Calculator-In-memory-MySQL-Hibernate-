@@ -7,13 +7,6 @@ private String operation;
 private double result;
 private User user;
 
-    public Operation(double num1, double num2, String operation, double result) {
-        this.num1 = num1;
-        this.num2 = num2;
-        this.operation = operation;
-        this.result = result;
-    }
-
     public Operation(double num1, double num2, String operation, double result, User user) {
         this.num1 = num1;
         this.num2 = num2;
@@ -22,7 +15,11 @@ private User user;
         this.user = user;
     }
 
-    public Operation() {
+    public Operation(double num1, double num2, String operation, double result) {
+        this.num1 = num1;
+        this.num2 = num2;
+        this.operation = operation;
+        this.result = result;
     }
 
     public double getNum1() {

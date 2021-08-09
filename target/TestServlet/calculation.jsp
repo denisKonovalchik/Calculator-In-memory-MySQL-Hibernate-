@@ -9,26 +9,62 @@
 <html>
 <head>
     <title>Calculator</title>
+    <style type="text/css">
+        body{
+            background-color: #8ef5f1;
+        }
+        .place{
+            position: fixed; /* Фиксированное положение */
+            left: 50%; /* Расстояние от правого края окна браузера */
+            top: 20%; /* Расстояние сверху */
+            transform: translate(-50%, -50%);
+        }
+
+        .btn {
+            text-decoration: none;
+            background: #f79411;
+            border: 1px solid  #f79411;
+            border-radius: 6px;
+            color: white;
+            text-align: center;
+            font: 16px Comic Sans MS, Comic Sans, cursive;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: white;
+            color: #f79411;
+        }
+
+        .href{
+            display:inline;
+            color: #9c12c9;
+            text-align: center;
+            font: 16px Comic Sans MS, Comic Sans, cursive;
+            cursor: pointer;
+        }
+
+    </style>
+
 </head>
 <body>
-<form action="/calculation" method="post">
-    <input type="number" step="any" name="num1"  placeholder="Number 1">
-    <input type="number" step="any" name="num2" placeholder="Number 2">
+<form class="place" action="/calculation" method="post">
+    <input type="number" step="0.001" name="num1" required placeholder="Number 1">
+    <input type="number" step="0.001" name="num2" required placeholder="Number 2">
     <select name="operation">
          <option value="addition">Addition</option>
          <option value="division">Division</option>
          <option value="multiplication">Multiplication</option>
          <option value="subtraction">Subtraction</option>
     </select>
-    <button>Calculation</button>
+    <button class="btn">Calculation</button>
+    <p style="font: 16px Comic Sans MS, Comic Sans, cursive;"> Result: ${requestScope.result}</p>
+<div class="href" >
+    <p><a href="/logHistory">History</a></p>
+    <p><a href="/logout">Logout</a></p>
+</div>
 </form>
-<p> Result: ${requestScope.result}</p>
 
-<form action="/logHistory" method="post">
-    <button>History</button>
-</form>
-<form action="/logout" method="get">
-    <button>Logout</button>
-</form>
 </body>
 </html>

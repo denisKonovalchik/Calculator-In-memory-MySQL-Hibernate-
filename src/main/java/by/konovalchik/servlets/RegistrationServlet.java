@@ -26,19 +26,17 @@ public class RegistrationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UsersDAO daoUser = new UsersDAOImp();
 
+        String name = req.getParameter("name");
         String login = req.getParameter("login");
         String password = req.getParameter("password");
 
-        User user = new User(login, password);
+        User user = new User(name, login, password);
 
         if(!daoUser.getUsers().contains(user)){
             daoUser.addUser(user);
-            req.setAttribute("messageRegistration", "Registration was successful");
-            getServletContext().getRequestDispatcher("/registration.jsp").forward(req, resp);
-
+            resp.sendRedirect(req.getContextPath() + "/main");
         }else{
-            req.setAttribute("messageRegistration", "The user is already registered" );
-            getServletContext().getRequestDispatcher("/registration.jsp").forward(req, resp);
+            resp.sendRedirect(req.getContextPath() + "/main");
         }
     }
 }

@@ -21,12 +21,12 @@ public class LogOperationsDAOImp implements LogOperationsDAO {
     }
 
     public List<Operation> showLogsByLogin(String login){
-        List<Operation> logsLogin = new ArrayList<>();
+        List<Operation> logByLogin = new ArrayList<>();
         for(Operation operation: logOperations){
             if(operation.getUser().getLogin().equals(login)){
-                logsLogin.add(operation);
+                logByLogin.add(operation);
             }
         }
-        return logsLogin;
+        return logByLogin;
     }
 }

@@ -17,8 +17,7 @@ public class AuthorizationFilter extends HttpFilter {
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
       User user = (User) req.getSession().getAttribute("user");
       if(user==null){
-          req.setAttribute("messageError", "You are not authorized. Log in!");
-          getServletContext().getRequestDispatcher("/authorizationError.jsp").forward(req, res);
+          res.sendRedirect(req.getContextPath() + "/main");
       }else{
           chain.doFilter(req, res);
       }

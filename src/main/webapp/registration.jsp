@@ -9,16 +9,41 @@
 <html>
 <head>
     <title>Calculator</title>
+
+    <style type="text/css">
+        body{
+            background-color: #8ef5f1;
+            position: fixed; /* Фиксированное положение */
+            left: 50%; /* Расстояние от правого края окна браузера */
+            top: 40%; /* Расстояние сверху */
+            transform: translate(-50%, -50%);
+        }
+
+        .btn {
+            text-decoration: none;
+            background: #f79411;
+            border: 1px solid  #f79411;
+            border-radius: 6px;
+            color: white;
+            text-align: center;
+            font: 16px Comic Sans MS, Comic Sans, cursive;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: white;
+            color: #f79411;
+        }
+
+    </style>
 </head>
 <body>
-<form action="/registration" method="post">
-    <input type="text" name="login" placeholder="Login">
-    <input type="text" name="password" placeholder="Password">
-    <button>Registration</button>
-</form>
-<p>${requestScope.messageRegistration}</p>
-<form action="/authorization" method="get">
-    <button>Authorization</button>
+<form  action="/registration" method="post">
+    <input type="text" name="name" required placeholder="Name">
+    <input type="text" name="login" required placeholder="Login">
+    <input type="text" name="password" required placeholder="Password">
+    <button class="btn" >Registration</button>
 </form>
 </body>
 </html>

@@ -3,20 +3,30 @@ package by.konovalchik.entity;
 import java.util.Objects;
 
 public class User {
-
+    private String name;
     private String login;
     private String password;
+
+    public User(String name, String login, String password) {
+        this.name = name;
+        this.login = login;
+        this.password = password;
+    }
 
     public User(String login, String password) {
         this.login = login;
         this.password = password;
     }
 
-    public User(String login) {
-        this.login = login;
+    public User() {
     }
 
-    public User() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLogin() {
@@ -52,7 +62,8 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "login='" + login + '\'' +
+                "name='" + name + '\'' +
+                ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }

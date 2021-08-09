@@ -18,5 +18,13 @@ public class UsersDAOImp implements UsersDAO {
         return users;
     }
 
-
+    @Override
+    public User getUserByLogin(String login) {
+        for(User user: users){
+            if(user.getLogin().equals(login)){
+                return  user;
+            }
+        }
+        return new User();
+    }
 }

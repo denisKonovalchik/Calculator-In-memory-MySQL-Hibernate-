@@ -13,7 +13,7 @@
     <style type="text/css">
 
     body{
-        background-color: #8ef5f1;
+        background-color: #e6f4f5;
     }
 
     .place{
@@ -46,12 +46,10 @@
 </head>
 <body>
 
-<h1 style="font: 42px Comic Sans MS, Comic Sans, cursive; color:#db2f04;text-align: center; margin-top: 110px ">
-    Do you need answers? Let's go!
-</h1>
 <div class="place">
 <a href="/registration" class="btn">Registration</a>
 <a href="/authorization" class="btn">Authorization</a>
+
 </div>
 </body>
 </html>

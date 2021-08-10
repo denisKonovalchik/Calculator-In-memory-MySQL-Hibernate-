@@ -15,7 +15,7 @@
     <style type="text/css">
 
     body{
-    background-color: #8ef5f1;
+    background-color: #e6f4f5;
     position: fixed; /* Фиксированное положение */
     left: 50%; /* Расстояние от правого края окна браузера */
     top: 20%; /* Расстояние сверху */
@@ -36,26 +36,11 @@
 <body>
 <h2 style="font: 16px Comic Sans MS, Comic Sans, cursive;">Operation history:</h2>
 <form action="/logHistory" method="get">
-<table border="1">
-    <tr>
-        <th >Num1</th>
-        <th>Num2</th>
-        <th>Operation</th>
-        <th>Result</th>
-        <th>Name</th>
-    </tr>
+    <ul>
     <c:forEach items="${requestScope.history}" var="operation">
-    <tr>
-        <td>${operation.num1}</td>
-        <td>${operation.num2}</td>
-        <td>${operation.operation}</td>
-        <td>${operation.result}</td>
-        <td>${operation.user.getName()}</td>
-    </tr>
+        <li>Num1: ${operation.num1}; Num2: ${operation.num2}; Operation: ${operation.operation}; Result: ${operation.result}; Name: ${operation.user.getName()}</li>
     </c:forEach>
-
-</table>
-<br>
+    </ul>
 <a href="/calculation" class="text" >Return to calculator</a>
 </form>
 </body>

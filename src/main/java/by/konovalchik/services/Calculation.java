@@ -16,7 +16,7 @@ public class Calculation {
         result = math.getCalculate(num1, num2);
         BigDecimal resultBD = new BigDecimal(result);
         resultBD = resultBD.setScale(3, RoundingMode.DOWN);
-        result = Double.parseDouble(String.valueOf(resultBD));
+        result = resultBD.doubleValue();
        }
        return new Operation(num1, num2, operation, result);
    }

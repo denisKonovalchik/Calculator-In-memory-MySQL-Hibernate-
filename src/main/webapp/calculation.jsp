@@ -11,7 +11,7 @@
     <title>Calculator</title>
     <style type="text/css">
         body{
-            background-color: #8ef5f1;
+            background-color: #e6f4f5;
         }
         .place{
             position: fixed; /* Фиксированное положение */
@@ -27,7 +27,7 @@
             border-radius: 6px;
             color: white;
             text-align: center;
-            font: 16px Comic Sans MS, Comic Sans, cursive;
+            font: 14px Comic Sans MS, Comic Sans, cursive;
             -webkit-transition-duration: 0.4s; /* Safari */
             transition-duration: 0.4s;
             cursor: pointer;
@@ -50,8 +50,10 @@
 </head>
 <body>
 <form class="place" action="/calculation" method="post">
-    <input type="number" step="0.001" name="num1" required placeholder="Number 1">
-    <input type="number" step="0.001" name="num2" required placeholder="Number 2">
+    <label for="number1">Number 1</label>
+    <input type="number" step="0.001" name="num1" required id="number1">
+    <label for="number2">Number 2</label>
+    <input type="number" step="0.001" name="num2" required id="number2">
     <select name="operation">
          <option value="addition">Addition</option>
          <option value="division">Division</option>

@@ -11,7 +11,7 @@
     <title>Calculator</title>
     <style type="text/css">
         body{
-            background-color: #8ef5f1;
+            background-color: #e6f4f5;
             position: fixed; /* Фиксированное положение */
             left: 50%; /* Расстояние от правого края окна браузера */
             top: 40%; /* Расстояние сверху */
@@ -40,8 +40,10 @@
 </head>
 <body>
 <form action="/authorization" method="post">
-    <input type="text" name="login" required placeholder="Login">
-    <input type="text" name="password" required placeholder="Password">
+    <label for="login">Login</label>
+    <input type="text" name="login" required id="login">
+    <label for="password">Password</label>
+    <input type="text" name="password" required id="password">
     <button class="btn">Authorization</button><br>
 </form>
 </body>

@@ -12,7 +12,7 @@
 
     <style type="text/css">
         body{
-            background-color: #8ef5f1;
+            background-color: #e6f4f5;
             position: fixed; /* Фиксированное положение */
             left: 50%; /* Расстояние от правого края окна браузера */
             top: 40%; /* Расстояние сверху */
@@ -26,7 +26,7 @@
             border-radius: 6px;
             color: white;
             text-align: center;
-            font: 16px Comic Sans MS, Comic Sans, cursive;
+            font: 14px Comic Sans MS, Comic Sans, cursive;
             -webkit-transition-duration: 0.4s; /* Safari */
             transition-duration: 0.4s;
             cursor: pointer;
@@ -40,9 +40,12 @@
 </head>
 <body>
 <form  action="/registration" method="post">
-    <input type="text" name="name" required placeholder="Name">
-    <input type="text" name="login" required placeholder="Login">
-    <input type="text" name="password" required placeholder="Password">
+    <label for="name">Name</label>
+    <input type="text" name="name" required id="name">
+    <label for="login">Login</label>
+    <input type="text" name="login" required id="login">
+    <label for="password">Password</label>
+    <input type="text" name="password" required id="password">
     <button class="btn" >Registration</button>
 </form>
 </body>

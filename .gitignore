@@ -9,11 +9,6 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-.idea
-.idea/*
-.idea/**
-calculator_servlet.iml
-CalculatorServlet.iml
 
 # Generated files
 .idea/**/contentModel.xml
@@ -30,7 +25,11 @@ CalculatorServlet.iml
 # Gradle
 .idea/**/gradle.xml
 .idea/**/libraries
-
+.idea
+.idea/*
+.idea/**
+calculator_servlet.iml
+CalculatorServlet.iml
 # Gradle and Maven with auto-import
 # When using Gradle or Maven with auto-import, you should exclude module files,
 # since they will be recreated, and may cause churn.  Uncomment if using

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Gudwin
@@ -6,45 +7,36 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<jsp:include page="_header.jsp"/>
 <html>
 <head>
-    <title>Calculator</title>
-    <style type="text/css">
-        body{
-            background-color: #e6f4f5;
-            position: fixed; /* Фиксированное положение */
-            left: 50%; /* Расстояние от правого края окна браузера */
-            top: 40%; /* Расстояние сверху */
-            transform: translate(-50%, -50%);
-        }
-
-        .btn {
-            text-decoration: none;
-            background: #f79411;
-            border: 1px solid  #f79411;
-            border-radius: 6px;
-            color: white;
-            text-align: center;
-            font: 16px Comic Sans MS, Comic Sans, cursive;
-            -webkit-transition-duration: 0.4s; /* Safari */
-            transition-duration: 0.4s;
-            cursor: pointer;
-        }
-        .btn:hover {
-            background-color: white;
-            color: #f79411;
-        }
-
-    </style>
-
+    <title>Authorization</title>
 </head>
 <body>
-<form action="/authorization" method="post">
-    <label for="login">Login</label>
-    <input type="text" name="login" required id="login">
-    <label for="password">Password</label>
-    <input type="text" name="password" required id="password">
-    <button class="btn">Authorization</button><br>
-</form>
+
+<div class="container">
+    <div class="row justify-content-center" >
+        <div class="col-sm-3" style="padding: 30px 20px 20px; border-radius:8px; background: #e3f2fd; margin-top: 40px" >
+            <legend style="text-align: center; padding-bottom: 20px">Please Login</legend>
+            <form action="/authorization" method="post">
+                <div class="mb-3">
+                    <input type="email" name="email" class="form-control"  aria-describedby="emailHelp" required placeholder="Email address">
+                    <div id="emailHelp" class="form-text" style="text-align: center">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="password" class="form-control"  required placeholder="Password" >
+                </div>
+                <div style="text-align: center">
+                <button type="submit" class="btn btn-success">Login</button>
+                </div>
+            </form>
+            <c:if test="${requestScope.message != null}">
+                <div class="alert alert-danger" role="alert" >
+                    <p>${requestScope.message}</p>
+                </div>
+            </c:if>
+        </div>
+    </div>
+</div>
 </body>
 </html>

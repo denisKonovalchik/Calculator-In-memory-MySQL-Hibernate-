@@ -8,40 +8,51 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<jsp:include page="_header.jsp"/>
 <html>
 <head>
-    <title>Calculator</title>
-
-    <style type="text/css">
-
-    body{
-    background-color: #e6f4f5;
-    position: fixed; /* Фиксированное положение */
-    left: 50%; /* Расстояние от правого края окна браузера */
-    top: 20%; /* Расстояние сверху */
-    transform: translate(-50%, -50%);
-    }
-
-    .text{
-        display:inline;
-        color: #9c12c9;
-        text-align: center;
-        font: 16px Comic Sans MS, Comic Sans, cursive;
-        cursor: pointer;
-    }
-
-    </style>
-
+    <title>History</title>
 </head>
 <body>
-<h2 style="font: 16px Comic Sans MS, Comic Sans, cursive;">Operation history:</h2>
-<form action="/logHistory" method="get">
-    <ul>
-    <c:forEach items="${requestScope.history}" var="operation">
-        <li>Num1: ${operation.num1}; Num2: ${operation.num2}; Operation: ${operation.operation}; Result: ${operation.result}; Name: ${operation.user.getName()}</li>
-    </c:forEach>
-    </ul>
-<a href="/calculation" class="text" >Return to calculator</a>
-</form>
+
+<div class="container">
+    <div class="row justify-content-center" >
+        <div class="col-sm-6">
+            <form action="/history" method="post">
+                <table class="table table-hover table-light table-bordered caption-top">
+                    <caption>Operations history</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">Num1</th>
+                        <th scope="col">Num2</th>
+                        <th scope="col">Operation</th>
+                        <th scope="col">Result</th>
+                        <th scope="col">Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${requestScope.history}" var="operation">
+                    <tr>
+                        <td>${operation.num1}</td>
+                        <td>${operation.num2}</td>
+                        <td>${operation.operation}</td>
+                        <td>${operation.result}</td>
+                        <td>${operation.user.getName()}</td>
+                    </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </form>
+            <form action="/history" method="post">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="submit"  name="page" value="1">1</button>
+                    <button type="submit" name="page" value="2">2</button>
+                    <button type="submit" name="page" value="3">3</button>
+                </div>
+                <p><a href="/calculation" class="my-font">Return to calculator</a></p>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

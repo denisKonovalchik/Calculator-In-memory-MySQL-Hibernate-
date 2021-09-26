@@ -2,31 +2,34 @@ package by.konovalchik.dao;
 
 import by.konovalchik.entity.Operation;
 import by.konovalchik.entity.User;
+import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class LogOperationsDAOImp implements LogOperationsDAO {
-    private static List<Operation> logOperations = new ArrayList<>();
+    private static final Logger logger = LoggerFactory.getLogger(LogOperationsDAOImp.class.getName());
+    private static List<Operation> log = new ArrayList<>();
 
 
     @Override
-    public void saveOperation(double num1, double num2, String operation, double result, User user) {
-        logOperations.add(new Operation(num1,num2, operation, result, user));
+    public void saveOperation(double num1, double num2, String operation, double  result, User user) {
+        logger.info("Save operation");
+        log.add(new Operation(num1, num2, operation, result, user));
     }
+
 
     @Override
-    public List<Operation> showLogs() {
-        return logOperations;
-    }
-
-    public List<Operation> showLogsByLogin(String login){
-        List<Operation> logByLogin = new ArrayList<>();
-        for(Operation operation: logOperations){
-            if(operation.getUser().getLogin().equals(login)){
-                logByLogin.add(operation);
+    public List<Operation> showLogsByEmail(String email){
+        List<Operation> logByEmail = new ArrayList<>();
+        for(Operation operation: log){
+            if(operation.getUser().getEmail().equals(email)){
+                logByEmail.add(operation);
             }
         }
-        return logByLogin;
+        logger.info("Request the history of user operations.");
+        return logByEmail;
     }
 }

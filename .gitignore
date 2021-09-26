@@ -9,11 +9,12 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-CalculatorServlet.iml
 .idea
 .idea/*
 .idea/**
-target
+calculator_servlet.iml
+CalculatorServlet.iml
+
 # Generated files
 .idea/**/contentModel.xml
 

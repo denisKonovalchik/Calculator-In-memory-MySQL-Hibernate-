@@ -1,8 +1,5 @@
 package by.konovalchik.servlets;
 
-
-import by.konovalchik.entity.User;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

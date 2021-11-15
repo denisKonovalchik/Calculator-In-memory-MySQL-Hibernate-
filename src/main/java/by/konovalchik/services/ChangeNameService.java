@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @AllArgsConstructor
 public class ChangeNameService {
-    private UsersDAO daoUsers;
+    private final UsersDAO daoUsers;
 
 
     public void changeName(String email, String name) {

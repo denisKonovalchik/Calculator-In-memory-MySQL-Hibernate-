@@ -1,5 +1,8 @@
 package by.konovalchik.services.operations;
 
+
+
+
 public class Subtraction implements MathOperation {
     public double getCalculate(double... num) {
         double result = num[0];

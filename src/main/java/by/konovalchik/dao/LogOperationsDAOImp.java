@@ -9,9 +9,10 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class LogOperationsDAOImp implements LogOperationsDAO {
     private static final Logger logger = LoggerFactory.getLogger(LogOperationsDAOImp.class.getName());
-    private static List<Operation> log = new ArrayList<>();
+    private static final List<Operation> log = new ArrayList<>();
 
 
     @Override

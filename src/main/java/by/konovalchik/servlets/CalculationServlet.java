@@ -34,10 +34,9 @@ public class CalculationServlet extends HttpServlet {
         Optional<Double> result = facade.getCalculation(num1,num2,operation,user);
         if(result.isPresent()){
             req.setAttribute("result", result.get());
-            getServletContext().getRequestDispatcher("/calculation.jsp").forward(req, resp);
         }else {
             req.setAttribute("result", "Operation not found");
-            getServletContext().getRequestDispatcher("/calculation.jsp").forward(req, resp);
         }
+        getServletContext().getRequestDispatcher("/calculation.jsp").forward(req, resp);
     }
 }

@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 
 @AllArgsConstructor
 public class ChangePasswordService {
-    private UsersDAO daoUser;
+    private final UsersDAO daoUser;
 
     public void editUserPassword(String email, String newUserPassword){
         daoUser.editUserPassword(email, newUserPassword);

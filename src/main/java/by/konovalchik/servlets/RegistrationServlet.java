@@ -40,10 +40,9 @@ public class RegistrationServlet extends HttpServlet {
         Address address = new Address(city, street, homeNumber, apartNumber);
         if(facade.registrationUser(user, address, telephone) ){
             req.setAttribute("message1","Registration successful!");
-            getServletContext().getRequestDispatcher("/registration.jsp").forward(req, resp);
         }else{
             req.setAttribute("message2","Email already exists!");
-            getServletContext().getRequestDispatcher("/registration.jsp").forward(req, resp);
         }
+        getServletContext().getRequestDispatcher("/registration.jsp").forward(req, resp);
     }
 }

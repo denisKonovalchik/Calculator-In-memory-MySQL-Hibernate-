@@ -10,7 +10,8 @@ import java.util.Optional;
 
 @AllArgsConstructor
 public class RegistrationUserService{
-    private UsersDAO daoUsers;
+    private final UsersDAO daoUsers;
+
 
     public boolean containUserByEmail(String email){
         return daoUsers.containUserByEmail(email);

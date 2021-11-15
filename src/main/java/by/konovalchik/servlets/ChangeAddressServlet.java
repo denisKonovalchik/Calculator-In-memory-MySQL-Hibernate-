@@ -47,12 +47,11 @@ public class ChangeAddressServlet extends HttpServlet {
             req.getSession().setAttribute("addresses", addresses);
             req.setAttribute("messageAddressEdit1", "Address changed!");
             logger.info("Address changed!");
-            getServletContext().getRequestDispatcher("/editAddr.jsp").forward(req, resp);
         }else{
             req.setAttribute("messageAddressEdit2", "Address not found!");
             logger.info("Address has not changed!");
-            getServletContext().getRequestDispatcher("/editAddr.jsp").forward(req, resp);
         }
+        getServletContext().getRequestDispatcher("/editAddr.jsp").forward(req, resp);
 
     }
 

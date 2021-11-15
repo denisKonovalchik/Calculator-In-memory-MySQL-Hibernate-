@@ -10,7 +10,7 @@ import lombok.Setter;
 
 @AllArgsConstructor
 public class ChangeAddressService {
-        private UsersAddressesDAO usersAddressesDAO;
+        private final UsersAddressesDAO usersAddressesDAO;
 
         public boolean containAddressesById(int idTel, int idUser){
             return usersAddressesDAO.containAddressById(idTel, idUser);

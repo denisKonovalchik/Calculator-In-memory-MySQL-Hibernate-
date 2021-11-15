@@ -10,7 +10,7 @@ import lombok.Setter;
 
 @AllArgsConstructor
 public class AddAddressService {
-    private UsersAddressesDAO usersAddressesDAO;
+    private final UsersAddressesDAO usersAddressesDAO;
 
 
     public boolean containAddress(Address address) {

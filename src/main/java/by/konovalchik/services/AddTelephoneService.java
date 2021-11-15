@@ -10,7 +10,7 @@ import lombok.Setter;
 
 @AllArgsConstructor
 public class AddTelephoneService {
-    private UsersTelephonesDAO usersTelephonesDAO;
+    private final UsersTelephonesDAO usersTelephonesDAO;
 
 
     public boolean containTelephone(Telephone telephone){

@@ -1,5 +1,8 @@
 package by.konovalchik.entity;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -15,6 +18,7 @@ public class Address {
     private int homeNumber;
     private int apartNumber;
     @ManyToOne(fetch = FetchType.LAZY)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name="user_id")
     private User user;
 

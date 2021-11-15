@@ -31,11 +31,10 @@ public class ChangePasswordServlet extends HttpServlet {
             user.setPassword(newPassword);
             req.setAttribute("messagePassword1", "Password was changed!");
             req.getSession().setAttribute("user", user);
-            getServletContext().getRequestDispatcher("/pass.jsp").forward(req, resp);
 
         }else{
             req.setAttribute("messagePassword2", "Wrong password!");
-            getServletContext().getRequestDispatcher("/pass.jsp").forward(req, resp);
         }
+        getServletContext().getRequestDispatcher("/pass.jsp").forward(req, resp);
     }
 }

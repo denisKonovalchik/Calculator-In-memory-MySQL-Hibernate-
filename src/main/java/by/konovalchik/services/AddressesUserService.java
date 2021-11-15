@@ -9,7 +9,7 @@ import java.util.List;
 
 @AllArgsConstructor
 public class AddressesUserService {
-    private UsersAddressesDAO usersAddressesDAO;
+    private final UsersAddressesDAO usersAddressesDAO;
 
 
     public void addAddress(Address address){

@@ -1,6 +1,8 @@
 package by.konovalchik.entity;
 
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.junit.jupiter.api.Disabled;
 
 import javax.persistence.*;
@@ -18,7 +20,9 @@ private String operation;
 private double result;
 @ManyToOne(fetch = FetchType.LAZY)
 @JoinColumn(name="user_id")
+@OnDelete(action = OnDeleteAction.CASCADE)
 private User user;
+
 
     public Operation(int id, double num1, double num2, String operation, double result, User user) {
         this.id = id;

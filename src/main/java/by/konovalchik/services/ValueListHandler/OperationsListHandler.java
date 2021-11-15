@@ -16,9 +16,12 @@ public class OperationsListHandler {
         this.operations = operations;
     }
 
+
+
     public int getSize() {
         return operations.size();
     }
+
 
     public List<Operation> getListElement(int page, int valuesPage) {
          List<Operation> list = new ArrayList<>();

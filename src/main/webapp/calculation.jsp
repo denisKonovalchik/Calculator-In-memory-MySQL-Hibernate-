@@ -10,46 +10,6 @@
 <html>
 <head>
     <title>Calculator</title>
-<%--    <style type="text/css">--%>
-
-<%--        *{--%>
-<%--            font: 16px Comic Sans MS, Comic Sans, cursive;--%>
-<%--        }--%>
-
-<%--        body{--%>
-<%--            background-color: #e6f4f5;--%>
-<%--        }--%>
-
-<%--        .place{--%>
-<%--            position: absolute;--%>
-<%--            top: 150px;--%>
-<%--            left: 350px;--%>
-<%--        }--%>
-
-<%--        .btn {--%>
-<%--            text-decoration: none;--%>
-<%--            background: #f79411;--%>
-<%--            border: 1px solid  #f79411;--%>
-<%--            border-radius: 6px;--%>
-<%--            color: white;--%>
-<%--            font: 20px Comic Sans MS, Comic Sans, cursive;--%>
-<%--            -webkit-transition-duration: 0.4s; /* Safari */--%>
-<%--            transition-duration: 0.4s;--%>
-<%--            cursor: pointer;--%>
-<%--        }--%>
-<%--        .btn:hover {--%>
-<%--            background-color: white;--%>
-<%--            color: #f79411;--%>
-<%--        }--%>
-
-<%--        .href{--%>
-<%--            color: #9c12c9;--%>
-<%--            text-align: center;--%>
-<%--            font: 16px Comic Sans MS, Comic Sans, cursive;--%>
-<%--            cursor: pointer;--%>
-<%--        }--%>
-
-<%--    </style>--%>
 
 </head>
 <body>
@@ -66,10 +26,10 @@
                 <div class="col-sm-3">
                     <select class="form-select" name="operation">
                         <option selected disabled>Select operation</option>
-                                 <option value="addition">Addition</option>
-                                 <option value="division">Division</option>
-                                 <option value="multiplication">Multiplication</option>
-                                 <option value="subtraction">Subtraction</option>
+                        <option value="addition">Addition</option>
+                        <option value="division">Division</option>
+                        <option value="multiplication">Multiplication</option>
+                        <option value="subtraction">Subtraction</option>
                     </select>
                 </div>
                 <div class="col-sm-3">

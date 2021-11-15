@@ -33,11 +33,10 @@ public class AddressesServlet extends HttpServlet {
             List<Address> addresses = facade.showAddresses(user.getEmail());
             req.getSession().setAttribute("addresses", addresses);
             req.setAttribute("messageAddress1", "Address deleted!");
-            getServletContext().getRequestDispatcher("/address.jsp").forward(req, resp);
         }else {
             req.setAttribute("messageAddress2", "The address cannot be deleted!");
-            getServletContext().getRequestDispatcher("/address.jsp").forward(req, resp);
         }
+        getServletContext().getRequestDispatcher("/address.jsp").forward(req, resp);
 
     }
 

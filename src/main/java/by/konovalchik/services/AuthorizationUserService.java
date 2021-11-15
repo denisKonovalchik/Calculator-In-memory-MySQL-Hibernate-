@@ -13,7 +13,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class AuthorizationUserService {
     private static final Logger logger = LogManager.getLogger();
-    private UsersDAO daoUsers;
+    private final UsersDAO daoUsers;
 
     public Optional<User> authorizationUser(String email, String password) {
         if(daoUsers.getUserByEmail(email).isPresent()){

@@ -10,7 +10,8 @@ import java.util.List;
 
 @AllArgsConstructor
 public class TelephonesUserService {
-    private UsersTelephonesDAO usersTelephonesDAO;
+    private final UsersTelephonesDAO usersTelephonesDAO;
+
 
     public void addTelephone(Telephone telephone){
         usersTelephonesDAO.addTelephone(telephone);

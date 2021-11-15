@@ -1,5 +1,7 @@
 package by.konovalchik.services.operations;
 
+
+
 public class Multiplication implements MathOperation {
     public double getCalculate(double... num) {
        double result = num[0];

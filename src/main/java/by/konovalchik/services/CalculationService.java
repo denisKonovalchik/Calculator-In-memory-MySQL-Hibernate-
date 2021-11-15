@@ -1,13 +1,6 @@
 package by.konovalchik.services;
 
-import by.konovalchik.dao.LogOperationsDAO;
-import by.konovalchik.entity.User;
 import by.konovalchik.services.operations.MathOperation;
-import by.konovalchik.entity.Operation;
-import lombok.Getter;
-import lombok.Setter;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

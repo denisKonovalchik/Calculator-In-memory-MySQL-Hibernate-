@@ -33,7 +33,7 @@ public class AddTelephoneServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Long number = Long.parseLong(req.getParameter("phoneNumber"));
+        long number = Long.parseLong(req.getParameter("phoneNumber"));
 
         User user = (User) req.getSession().getAttribute("user");
         if(facade.addTelephone(new Telephone(number, user))){
@@ -41,11 +41,10 @@ public class AddTelephoneServlet extends HttpServlet {
             req.getSession().setAttribute("telephones", telephones);
             req.setAttribute("messageTelephoneAdd1", "Phone number added!");
             logger.info("Phone number added!");
-            getServletContext().getRequestDispatcher("/addTel.jsp").forward(req, resp);
         }else{
             req.setAttribute("messageTelephoneAdd2", "Telephone number has not been added!!");
-            getServletContext().getRequestDispatcher("/addTel.jsp").forward(req, resp);
         }
+        getServletContext().getRequestDispatcher("/addTel.jsp").forward(req, resp);
 
     }
 }

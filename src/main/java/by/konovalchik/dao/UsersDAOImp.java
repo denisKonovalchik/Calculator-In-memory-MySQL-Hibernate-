@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class UsersDAOImp implements UsersDAO {
-    private static List<User> users = new ArrayList<>();
+    private static final List<User> users = new ArrayList<>();
     private static final Logger logger = LoggerFactory.getLogger(UsersDAOImp.class.getName());
 
 
@@ -48,4 +48,6 @@ public class UsersDAOImp implements UsersDAO {
     public void editUserName(String email, String newName){
         users.stream().filter(user -> user.getEmail().equals(email)).forEach(user -> user.setName(newName));
     }
+
+
 }

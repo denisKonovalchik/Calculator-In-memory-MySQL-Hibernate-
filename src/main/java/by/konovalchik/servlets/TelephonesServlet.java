@@ -34,11 +34,10 @@ public class TelephonesServlet extends HttpServlet {
             List<Telephone> telephones = facade.showTelephones(user.getEmail());
             req.getSession().setAttribute("telephones", telephones);
             req.setAttribute("messageTelephone1", "Phone number deleted!");
-            getServletContext().getRequestDispatcher("/telephone.jsp").forward(req, resp);
         }else {
             req.setAttribute("messageTelephone2", "Phone number not found!");
-            getServletContext().getRequestDispatcher("/telephone.jsp").forward(req, resp);
         }
+        getServletContext().getRequestDispatcher("/telephone.jsp").forward(req, resp);
 
     }
 

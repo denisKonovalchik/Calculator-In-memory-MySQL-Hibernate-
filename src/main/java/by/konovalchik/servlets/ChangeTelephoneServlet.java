@@ -41,11 +41,10 @@ public class ChangeTelephoneServlet extends HttpServlet {
             req.getSession().setAttribute("telephones", telephones);
             req.setAttribute("messageTelephoneEdit1", "Phone number changed!");
             logger.info("Phone number changed!");
-            getServletContext().getRequestDispatcher("/editTel.jsp").forward(req, resp);
         }else{
             req.setAttribute("messageTelephoneEdit2", "Phone number not found!");
-            getServletContext().getRequestDispatcher("/editTel.jsp").forward(req, resp);
         }
+        getServletContext().getRequestDispatcher("/editTel.jsp").forward(req, resp);
 
     }
 }

@@ -15,7 +15,7 @@ import java.util.List;
 
 @AllArgsConstructor
 public class LogOperationsService {
- private LogOperationsDAO daoLog;
+ private final LogOperationsDAO daoLog;
 
 
     public void saveOperation(double num1, double num2, String operation, double result, User user){

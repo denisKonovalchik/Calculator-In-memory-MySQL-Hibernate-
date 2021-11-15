@@ -1,5 +1,7 @@
 package by.konovalchik.services.operations;
 
+
+
 public class Division implements MathOperation {
 
     public double getCalculate(double... num) {

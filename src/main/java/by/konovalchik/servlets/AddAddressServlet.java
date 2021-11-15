@@ -38,12 +38,11 @@ public class AddAddressServlet extends HttpServlet {
             req.getSession().setAttribute("addresses", addresses);
             req.setAttribute("messageAddressAdd1", "Address added!");
             logger.info("Address added!");
-            getServletContext().getRequestDispatcher("/addAddr.jsp").forward(req, resp);
         }else{
             req.setAttribute("messageAddressAdd2", "Address has not been added!");
             logger.info("Address has not changed!");
-            getServletContext().getRequestDispatcher("/addAddr.jsp").forward(req, resp);
         }
+        getServletContext().getRequestDispatcher("/addAddr.jsp").forward(req, resp);
 
     }
 }

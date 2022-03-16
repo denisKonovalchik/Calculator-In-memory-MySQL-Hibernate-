@@ -1,12 +1,9 @@
 package by.konovalchik.servlets;
 
-import by.konovalchik.dao.UsersDAOImp;
 import by.konovalchik.entity.Address;
 import by.konovalchik.entity.Telephone;
 import by.konovalchik.entity.User;
-import by.konovalchik.services.AuthorizationUserService;
 import by.konovalchik.services.facade.CalculatorFacade;
-import lombok.SneakyThrows;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

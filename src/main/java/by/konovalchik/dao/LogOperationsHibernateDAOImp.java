@@ -33,8 +33,8 @@ public class LogOperationsHibernateDAOImp implements LogOperationsDAO {
         List<Operation> log = new ArrayList<>();
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             transaction = session.beginTransaction();
-             List list = session.createQuery(" FROM Operation op LEFT JOIN op.user user" +
-                                                " WHERE user.email = :emailUser ", Operation.class)
+             List list = session.createQuery(" FROM Operation op LEFT JOIN op.user user " +
+                                                " WHERE user.email = :emailUser ")
                                                 .setParameter("emailUser", email).list();
              log = getListOperation(list);
             transaction.commit();

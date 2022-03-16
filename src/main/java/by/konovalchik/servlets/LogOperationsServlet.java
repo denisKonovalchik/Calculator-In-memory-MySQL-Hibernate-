@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "logOperationsServlet", urlPatterns = "/history")
+@WebServlet(name = "LogOperationsServlet", urlPatterns = "/history")
 public class LogOperationsServlet extends HttpServlet {
     private static final  CalculatorFacade facade = new CalculatorFacade();
 

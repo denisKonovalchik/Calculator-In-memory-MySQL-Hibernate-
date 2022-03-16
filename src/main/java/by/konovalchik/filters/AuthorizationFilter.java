@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 
-@WebFilter(servletNames = {"CalculationServlet", "logOperationsServlet", "ChangePasswordServlet",
+@WebFilter(servletNames = {"CalculationServlet", "LogOperationsServlet", "ChangePasswordServlet",
         "UserProfileServlet", "ChangeNameServlet", "AddTelephoneServlet", "ChangeTelephoneServlet", "TelephonesServlet",
         "AddAddressesServlet", "ChangeAddressServlet", "AddressesServlet"} )
 public class AuthorizationFilter extends HttpFilter {

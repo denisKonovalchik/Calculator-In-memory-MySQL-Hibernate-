@@ -1,5 +1,4 @@
-<%@ page import="by.konovalchik.entity.Operation" %>
-<%@ page import="java.util.List" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Gudwin
   Date: 01.08.2021
@@ -37,7 +36,7 @@
                         <td>${operation.num2}</td>
                         <td>${operation.operation}</td>
                         <td>${operation.result}</td>
-                        <td>${operation.user.getName()}</td>
+                        <td>${operation.user.name}</td>
                     </tr>
                     </c:forEach>
                     </tbody>
